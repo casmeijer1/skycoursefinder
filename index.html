@@ -3,21 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Eerste Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            text-align: center;
-            margin-top: 50px;
-        }
-        h1 {
-            color: #0078D7;
-        }
-    </style>
+    <title>Skycoursefinder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
-    <h1>Welkom op mijn eerste website!</h1>
-    <p>Gemaakt met Notepad++ 😄</p>
+
+    <!-- Menubalk -->
+    <div class="navbar">
+        <div class="navbarlogo">
+		<a href="index.html">
+			<img src="websitelogo.png" alt="Skycoursefinder Logo" class="navbar-logo">
+		</a>
+		</div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Algemene informatie over:</button>
+            <div class="dropdown-content">
+                <a href="infoklm.html">KLM ⮕</a>
+                <a href="infoba.html">British Airways ⮕</a>
+                <a href="infoaf.html">Air France ⮕</a>
+                <a href="infolufthansa.html">Lufthansa ⮕</a>
+            </div>
+        </div>
+
+        <a href="toelatingseisen.html">Toelatingseisen ⮕</a>
+        <a href="selectieprocedure.html">Selectieprocedure ⮕</a>
+        <a href="carrièreperspectief.html">Carrièreperspectief ⮕</a>
+        <a href="vragenlijst.html">Vragenlijst ⮕</a>
+    </div>
+
+    <!-- Bovenkant van de website -->
+    <div class="header-container">
+        <div class="header-overlay"></div>
+        <div class="header-background"></div>
+
+        <div class="header-content">
+            <h1>Skycoursefinder</h1>
+            <p>Wilt u piloot worden, maar weet nog niet welke opleiding u wilt gaan volgen? <br> Neem dan een kijkje op onze site!</p>
+
+            <div class="button-group">
+                <a href="opleidingen.html" class="button-outline">Ontdek opleidingen ⮕</a>
+                <a href="vragenlijst.html" class="button-outline">Start de vragenlijst ⮕</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info gedeelte -->
+    <div id="info" class="about-container">
+		<h2>Alle informatie overzichtelijk op een rijtje</h2>
+
+        <div class="about-grid">
+            <a href="toelatingseisen.html" class="about-card">
+                <div class="about-icon">
+                    <i data-feather="book" stroke="white"></i>
+                </div>
+                <h3>Toelatingseisen</h3>
+                <h4>Bekijk hier de toelatingseisen van alle opleidingen. Deze worden kort en duidelijk beschreven in één tabel!</h4>
+            </a>
+
+            <a href="selectieprocedure.html" class="about-card">
+                <div class="about-icon">
+                    <i data-feather="compass" stroke="white"></i>
+                </div>
+                <h3>Selectieprocedure</h3>
+                <h4>Bekijk hier de selectieprocedure van alle opleidingen. Deze worden kort en duidelijk beschreven in één tabel!</h4>
+            </a>
+
+            <a href="carrièreperspectief.html" class="about-card">
+                <div class="about-icon">
+                    <i data-feather="award" stroke="white"></i>
+                </div>
+                <h3>Carrièreperspectief</h3>
+                <h4>Bekijk hier het carrièreperspectief van alle opleidingen. Deze worden kort en duidelijk beschreven in één tabel!</h4>
+            </a>
+        </div>
+    </div>
+
+<!-- Vliegtuig plaatje -->
+<div class="vliegtuig-plaatje">
+    <img src="https://emojiisland.com/cdn/shop/products/Airplane_Emoji_large.png?v=1571606064" alt="vliegtuigje">
+</div>
+
+    <!-- Verhaal van piloot -->
+    <div class="quote-container">
+        <h2>Informatie over de websitemakers</h2>
+        <div class="quote-box">
+            <div class="quote-header">
+                <h3><u>November 2025</u></h3>
+            </div>
+            <blockquote>
+                "Wij, Cas en Joas, zijn de makers van deze website. Onze droom is om volgend jaar de pilotenopleiding bij KLM te volgen. 
+                Wij hopen en gaan er ook vanuit dat dit ons gaat lukken, maar er is een kans dat één van ons of wij allebei niet toegelaten worden. 
+                En ja, wat dan? Waarschijnlijk willen wij dan ergens anders een pilotenopleiding te volgen, maar dan is de vraag: 
+                'Waar wil ik dit gaan doen en welke opleiding past het beste bij mij?' Dit is ook de voornamelijkste reden waarom wij deze website hebben gemaakt,
+                omdat wij niet de enigen zijn met deze vraag, maar bij heel veel andere 'wannabe-piloten' dwarrelt deze vraag ook rond."
+            </blockquote>
+        </div>
+    </div>
+
+    <!-- Contactgegevens -->
+    <div class="newsletter-container">
+        <h5>Contactinformatie</h5>
+        <p>
+            Heeft u vragen of wilt u ons voor een andere reden benaderen? <br>
+            <u>Mail dan naar:</u> c.meijer2008@icloud.com
+        </p>
+    </div>
+
+	<!-- Footer -->
+    <div class="main-footer">
+        <p>&copy; 2025 Skycoursefinder - Cas Meijer & Joas Hut</p>
+    </div>
+
+    <script> /* Door dit stukje werken de icoontjes bij 'Info gedeelte'*/
+        feather.replace();
+    </script>
+
 </body>
 </html>
