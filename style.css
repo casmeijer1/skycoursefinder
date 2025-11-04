@@ -1,0 +1,489 @@
+/* Algemene instellingen */ 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #1e293b;
+}
+
+p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.4;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+    color: #1e3a8a;
+    text-align: center;
+    margin-top: 415px;
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #1e3a8a;
+    margin-top: 12px;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+h5 {
+    font-size:32px;
+    text-align: center;
+    color: #eff6ff;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+h6 {
+    font-size: 18px;
+    color: white;
+}
+
+/* Menubalk */
+.navbar {
+    display: flex;                  
+    justify-content: space-around;  
+    align-items: center;
+    background-color: #1e3a8a;
+    position: fixed;
+    top: 0;
+    width: 95%;             
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    height: 60px;
+    border-radius: 15px;    
+    padding: 0 10px;      
+    margin-top: 10px;
+}
+
+.navbar a, .dropbtn {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Hover alleen op tekst-links, niet op logo */
+.navbar a:not(.navbar-logo):hover, 
+.dropdown:hover .dropbtn {
+    background-color: #2563eb;
+    text-decoration: underline;
+}
+
+.navbar-logo {
+    height: 75px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.navbarlogo a:hover {
+    background-color: transparent;
+}
+
+.navbar-logo:hover {
+    background-color: transparent;
+}  
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;                
+    left: 0;
+    background-color: white;   
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    flex-direction: column;    
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #1e3a8a;           
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;            
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #e0e7ff; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ===== Header / Intro ===== */
+.header-container {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to bottom, #1e3a8a, #2563eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://bizlife.rs/wp-content/uploads/2023/09/a350-900-rr-klm-v06.jpg.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+}
+
+/* Knoppen */
+.button-group {
+    display: block;
+    margin-top: 0px;
+}
+
+.button-outline {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 2px solid white;
+    background-color: #1e3a8a; 
+    color: white;              
+}
+
+.button-outline:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* ===== Info gedeelte / Cards ===== */
+.about-container {
+    background: white;
+    padding: 80px 24px 80px 24px; 
+    text-align: center;
+}
+
+.about-grid {
+    display: inline-block;
+    width: 100%;
+}
+
+.about-card {
+    background-color: #eff6ff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin: 20px;
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Iconen */
+.about-icon {
+    background-color: #1e3a8a;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.about-icon i {
+    width: 32px;
+    height: 32px;
+}
+
+.vliegtuig-plaatje {
+    position: relative;
+    width: 100%;
+    height: 0;
+}
+
+.vliegtuig-plaatje img {
+    position: absolute;
+    right: 40px;       
+    top: -60px;        
+    height: 120px;      
+    z-index: 2; 
+}
+
+/* Informatie websitemakers */
+.quote-container {
+    background-color: #eff6ff;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.quote-box {
+    background-color: white;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.quote-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #374151;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Contactgegevens */
+.newsletter-container {
+    background-color: #1e3a8a;
+    color: white; 
+    text-align: center;
+    padding: 50px 24px;
+}
+
+.newsletter-container p {
+    color: white !important;
+    font-size: 20px;
+    text-align: center !important;
+    font-style: italic !important;
+    margin-bottom: 32px;
+}
+
+.newsletter-container input {
+    padding: 12px 16px;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    outline: none;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Extra brede tekstbox voor informatieve pagina's */
+.quote-box-breed {
+    background-color: white;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    color: #374151;
+    line-height: 1.6;
+    font-size: 18px;
+    position: relative;
+}
+
+/* Logo’s binnen quote-box-breed in info-pages: vaste grootte */
+.info-pages .quote-box-breed .logo {
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    width: 150px;      
+    height: 150px;     
+    object-fit: contain; 
+}
+
+/* Standaard p en h2 voor info-pages quote-box-breed */
+.info-pages p {
+    color: #1e293b;
+    font-style: normal;
+    text-align: left;
+}
+
+.info-pages h2 {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* Tabel opmaak */
+.styled-table {
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+.styled-table thead tr {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th, 
+.styled-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f6ff;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 3px solid #1e3a8a;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #e0e7ff;
+  transition: background-color 0.2s ease;
+}
+
+.main-footer p {
+    color: white !important;      
+    text-align: center !important; 
+}
+
+/* Achtergrondkleur voor dit tabblad */
+body.info-pages {
+    background-color: #eff6ff;
+}
+
+/* Titel en paragraaf in quote-box-breed */
+.info-pages h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.info-pages .quote-box-breed p {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #1e293b;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Vragenlijst */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question p {
+    font-weight: bold;
+    color: #1e3a8a;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    background-color: #f1f5fb;
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #1e293b;
+}
+
+label:hover {
+    background-color: #e2e8f0;
+    transform: scale(1.01);
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #1e3a8a;
+}
+
+.submit-btn {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 40px auto 20px auto;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.

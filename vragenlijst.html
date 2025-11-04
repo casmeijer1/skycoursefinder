@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skycoursefinder - Vragenlijst</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="info-pages">
+
+    <!-- ===== Menubalk ===== -->
+    <div class="navbar">
+        <div class="navbarlogo">
+            <a href="index.html">
+                <img src="websitelogo.png" alt="Skycoursefinder Logo" class="navbar-logo">
+            </a>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Algemene informatie over:</button>
+            <div class="dropdown-content">
+                <a href="infoklm.html">KLM ⮕</a>
+                <a href="infoba.html">British Airways ⮕</a>
+                <a href="infoaf.html">Air France ⮕</a>
+                <a href="infolufthansa.html">Lufthansa ⮕</a>
+            </div>
+        </div>
+
+        <a href="toelatingseisen.html">Toelatingseisen ⮕</a>
+        <a href="selectieprocedure.html">Selectieprocedure ⮕</a>
+        <a href="carrièreperspectief.html">Carrièreperspectief ⮕</a>
+        <a href="vragenlijst.html">Vragenlijst (u bent nu hier)</a>
+    </div>
+
+    <!-- ===== Vragenlijst ===== -->
+    <h2 style="margin-top:130px;">Welke vliegopleiding past het best bij jou?</h2> <!-- ===== ik heb bij deze h2 stijl erbij gezet, omdat het de hele tijd niet lukte om dit toe te voegen in style.css, dit is dus een uitzondering ===== -->
+
+    <div class="quiz-container">
+        <form id="quizForm">
+
+            <div class="question">
+                <p>1. <u>Wat spreekt jou het meest aan in een opleiding?</u></p>
+                <label><input type="radio" name="q1" value="KLM">Een Nederlandse opleiding met een hoge toelatingsstandaard</label>
+                <label><input type="radio" name="q1" value="BA">Een internationale opleiding in Engeland</label>
+                <label><input type="radio" name="q1" value="AF">Een opleiding met Franse precisie en teamwork</label>
+                <label><input type="radio" name="q1" value="LH">Een gestructureerde, Duitse opleiding binnen een luchtvaartgroep</label>
+            </div>
+			
+			</br>
+
+            <div class="question">
+                <p>2. <u>Wat vind jij het belangrijkst bij het leren vliegen?</u></p>
+                <label><input type="radio" name="q2" value="KLM">Strakke selectie en kwaliteitsbehoud</label>
+                <label><input type="radio" name="q2" value="BA">Internationale ervaring en netwerken</label>
+                <label><input type="radio" name="q2" value="AF">Samenwerking en loyaliteit binnen een team</label>
+                <label><input type="radio" name="q2" value="LH">Efficiëntie en nauwkeurige planning</label>
+            </div>
+			
+			</br>
+
+            <div class="question">
+                <p>3. <u>Waar zou jij het liefst willen wonen tijdens je opleiding?</u></p>
+                <label><input type="radio" name="q3" value="KLM">In Nederland</label>
+                <label><input type="radio" name="q3" value="BA">In het Verenigd Koninkrijk</label>
+                <label><input type="radio" name="q3" value="AF">In Frankrijk</label>
+                <label><input type="radio" name="q3" value="LH">In Duitsland</label>
+            </div>
+			
+			</br>
+
+            <div class="question">
+                <p>4. <u>Wat vind jij belangrijk bij je toekomstige carrière?</u></p>
+                <label><input type="radio" name="q4" value="KLM">Een bijna gegarandeerde baan bij een nationale maatschappij</label>
+                <label><input type="radio" name="q4" value="BA">Veel doorgroeimogelijkheden binnen een wereldwijde airline</label>
+                <label><input type="radio" name="q4" value="AF">Een stabiele baan met zekerheid</label>
+                <label><input type="radio" name="q4" value="LH">Een carrière binnen een grote luchtvaartgroep met structuur</label>
+            </div>
+			
+			</br>
+
+            <div class="question">
+                <p>5. <u>Wat typeert jou het meest?</u></p>
+                <label><input type="radio" name="q5" value="KLM">Nauwkeurig, professioneel, ambitieus</label>
+                <label><input type="radio" name="q5" value="BA">Avontuurlijk, flexibel, internationaal ingesteld</label>
+                <label><input type="radio" name="q5" value="AF">Teamgericht, sociaal, gedisciplineerd</label>
+                <label><input type="radio" name="q5" value="LH">Georganiseerd, verantwoordelijk, analytisch</label>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="berekenResultaat()">Bekijk mijn resultaat ✈️</button>
+        </form>
+
+        <div class="result-box" id="resultBox">
+            <h3>Jouw ideale vliegopleiding is:</h3>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+    <!-- ===== Contactgegevens ===== -->
+    <div class="newsletter-container">
+        <h5>Contactinformatie</h5>
+        <p>
+            Heeft u vragen of wilt u ons voor een andere reden benaderen? <br>
+            <u>Mail dan naar:</u> c.meijer2008@icloud.com
+        </p>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <div class="main-footer">
+        <p><em>&copy; 2025 Skycoursefinder - Cas Meijer & Joas Hut</em></p>
+    </div>
+
+    <script>
+        function berekenResultaat() {
+            const form = document.getElementById('quizForm');
+            const antwoorden = new FormData(form);
+            let scores = { KLM: 0, BA: 0, AF: 0, LH: 0 };
+            let ingevuld = false;
+
+            for (let [vraag, antwoord] of antwoorden.entries()) {
+                scores[antwoord]++;
+                ingevuld = true;
+            }
+
+            const resultBox = document.getElementById('resultBox');
+            const resultText = document.getElementById('resultText');
+
+            if (!ingevuld) {
+                resultText.textContent = "⚠️ Geef minstens één antwoord om te zien welke vliegopleiding het best bij jou past.";
+                resultBox.style.display = 'block';
+                return;
+            }
+
+            // Bepaal hoogste score
+            let beste = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+            // Toon resultaat
+            let opleidingTekst = {
+                KLM: "✈️ KLM Flight Academy — een Nederlandse topopleiding met uitstekende carrièrekansen bij KLM.",
+                BA: "✈️ British Airways Speedbird Pilot Academy — perfect voor wie internationaal wil vliegen.",
+                AF: "✈️ Air France Cadet Programme — ideaal voor wie teamwork en stabiliteit belangrijk vindt.",
+                LH: "✈️ Lufthansa European Flight Academy — voor wie structuur, efficiëntie en zekerheid zoekt."
+            };
+
+            resultText.textContent = opleidingTekst[beste];
+            resultBox.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
