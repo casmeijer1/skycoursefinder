@@ -24,7 +24,7 @@ h1 {
     font-size: 45px;
     color: #1e3a8a;
     text-align: center;
-    margin-top: 415px;
+    margin-top: 450px;
 }
 
 h2 {
@@ -507,6 +507,7 @@ input[type="radio"] {
 
 .result-box p {
     color: #1e293b;
+	text-align: center;
     font-size: 18px;
     margin: 0;
 }
