@@ -60,6 +60,11 @@ h6 {
     color: white;
 }
 
+a {
+	font-size: 18px;
+	color: black;
+}
+
 /* Menubalk */
 .navbar {
     display: flex;                  

@@ -36,7 +36,7 @@
     </div>
 
     <!-- ===== Vragenlijst ===== -->
-    <h2 style="margin-top:130px;">Welke vliegopleiding past het best bij jou?</h2> <!-- ===== ik heb bij deze h2 stijl erbij gezet, omdat het de hele tijd niet lukte om dit toe te voegen in style.css, dit is dus een uitzondering ===== -->
+    <h2 style="margin-top:130px;">Welke vliegopleiding past het best bij jou?</h2>
 
     <div class="quiz-container">
         <form id="quizForm">
@@ -95,6 +95,8 @@
         <div class="result-box" id="resultBox">
             <h3>Jouw ideale vliegopleiding is:</h3>
             <p id="resultText"></p>
+			</br>
+			<a href="resultLink" id="resultLink"></a>
         </div>
     </div>
 
@@ -126,6 +128,7 @@
 
             const resultBox = document.getElementById('resultBox');
             const resultText = document.getElementById('resultText');
+            const resultLink = document.getElementById('resultLink');
 
             if (!ingevuld) {
                 resultText.textContent = "⚠️ Geef minstens één antwoord om te zien welke vliegopleiding het best bij jou past.";
@@ -133,18 +136,27 @@
                 return;
             }
 
-            // Bepaal hoogste score
             let beste = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
 
-            // Toon resultaat
             let opleidingTekst = {
                 KLM: "✈️ KLM Flight Academy",
                 BA: "✈️ British Airways Speedbird Pilot Academy",
                 AF: "✈️ Air France Cadet Programme",
                 LH: "✈️ Lufthansa European Flight Academy"
             };
+			
+            let opleidingLink = {
+                KLM: "https://klmflightacademy.nl/opleiding/",
+                BA: "https://careers.ba.com/Speedbird-Pilot-Academy-Preparation",
+                AF: "https://corporate.airfrance.com/en/airline-pilot",
+                LH: "https://www.european-flight-academy.com/en/"
+            };
 
             resultText.textContent = opleidingTekst[beste];
+            resultLink.textContent = opleidingLink[beste];
+            resultLink.href = opleidingLink[beste];
+            resultLink.target = "_blank";
+
             resultBox.style.display = 'block';
         }
     </script>
